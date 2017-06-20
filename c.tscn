@@ -18,7 +18,7 @@ script/script = ExtResource( 1 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 0.5, 0, 0, 0.5, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -26,7 +26,7 @@ mode = 0
 mass = 1.0
 friction = 0.1
 bounce = 1.0
-gravity_scale = 10.0
+gravity_scale = 20.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
@@ -40,18 +40,21 @@ damp_override/angular = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dot"]
 
+transform/scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="dots" type="Sprite" parent="dot"]
 
+transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="Trail2D" type="Node2D" parent="dot"]
 
 visibility/opacity = 0.8
 visibility/blend_mode = 1
+transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 3 )
 __meta__ = { "_editor_icon":ExtResource( 4 ) }
 texture = null
@@ -61,7 +64,7 @@ startColor = Color( 0, 0, 0, 1 )
 endColor = Color( 0, 0, 0, 1 )
 emit = true
 lifeTime = 0.307
-startWidth = 150
+startWidth = 75
 endWidth = 0.0
 maxAngle = 2.0
 minVertexDistance = 5
@@ -69,5 +72,6 @@ maxVertexDistance = 10
 optimizeAngleInterval = 0.1
 optimizeDistanceInterval = 0.05
 optimizeCount = 30
+
 
 
